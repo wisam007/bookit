@@ -1,6 +1,7 @@
 import Logo from "@/assets/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaUser, FaSignInAlt, FaSignOutAlt, FaBuilding } from "react-icons/fa";
 const Header = () => {
   return (
