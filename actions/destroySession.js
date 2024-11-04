@@ -14,6 +14,7 @@ async function destroySession() {
 
     //clear session cookie
     cookies().delete("appwrite-session");
+    return { success: true };
   } catch (error) {
     return { error: "Error deleting session" };
   }

@@ -22,7 +22,7 @@ const createAdminClient = async () => {
 const createSessionClient = async (session) => {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(process.env.NEXT_PUBLIC_APPWRIE_PROJECT); // Your project ID4
+    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT); // Your project ID4
 
   if (session) {
     client.setSession(session);
@@ -31,7 +31,7 @@ const createSessionClient = async (session) => {
     get account() {
       return new Account(client);
     },
-    get dabtabase() {
+    get databases() {
       return new Databases(client);
     },
   };
