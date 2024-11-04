@@ -6,9 +6,20 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { FaUser, FaSignInAlt, FaSignOutAlt, FaBuilding } from "react-icons/fa";
 import destroySession from "@/actions/destroySession";
+import checkAuth from "@/actions/checkAuth";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+  useEffect(() => {
+    const fetchAuthStatus = async () => {
+      const result = await checkAuth();
+      setIsAuthenticated(result.isAuthenticated);
+    };
+    fetchAuthStatus();
+  }, []);
   const handleLogout = async () => {
     const { success, error } = await destroySession();
     if (success) {
