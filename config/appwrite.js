@@ -13,7 +13,7 @@ const createAdminClient = async () => {
     get databases() {
       return new Databases(client);
     },
-    get Storage() {
+    get storage() {
       return new Storage(client);
     },
   };
