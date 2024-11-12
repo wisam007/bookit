@@ -33,7 +33,7 @@ async function createUser(previousState, formData) {
     };
   } catch (error) {
     console.log("registration error");
-    console.log(account);
+
     return {
       error: "Could not register user",
     };

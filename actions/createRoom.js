@@ -20,7 +20,7 @@ async function createRoom(previousState, formData) {
       try {
         //upload
         const response = await storage.createFile("rooms", ID.unique(), image);
-        console.log(response);
+
         imageID = response.$id;
       } catch (error) {
         console.log("error uploading image");
